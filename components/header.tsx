@@ -7,12 +7,10 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu } from "lucide-react"
 
 const navigation = [
+  { name: "Inicio", href: "/" },
   { name: "Becas", href: "/becas" },
-  { name: "Vivir en el CEULT", href: "/la-casa" },
-  { name: "Ingresantes", href: "/ingresantes" },
-  { name: "Transparencia", href: "/transparencia" },
+  { name: "UNLP y Carreras", href: "/unlp" },
   { name: "Novedades", href: "/novedades" },
-  { name: "Contacto", href: "/contacto" },
 ]
 
 export function Header() {
@@ -37,7 +35,7 @@ export function Header() {
             </Link>
           ))}
           <Button asChild>
-            <Link href="/postularme">Postularme</Link>
+            <Link href="/becas#pasos">Postularme</Link>
           </Button>
         </nav>
 
@@ -66,10 +64,9 @@ export function Header() {
         </Sheet>
       </div>
 
-      {/* Mobile Sticky CTA */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 p-4 bg-background border-t">
         <Button asChild className="w-full">
-          <Link href="/postularme">Postularme</Link>
+          <Link href="/contacto">Escribinos</Link>
         </Button>
       </div>
     </header>

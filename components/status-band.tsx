@@ -5,9 +5,8 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
 interface EstadoData {
-  inscripcionAbierta: boolean
-  fechaLimite: string
-  mensaje: string
+  inscripcion: "abierta" | "cerrada"
+  hasta: string
 }
 
 export function StatusBand() {
@@ -15,7 +14,7 @@ export function StatusBand() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch("/data/estado.json")
+    fetch("/datos/estado.json")
       .then((res) => res.json())
       .then((data: EstadoData) => {
         setEstado(data)
@@ -39,29 +38,25 @@ export function StatusBand() {
 
   if (!estado) return null
 
+  const isOpen = estado.inscripcion === "abierta"
+  const fechaFormateada = new Date(estado.hasta).toLocaleDateString("es-AR", {
+    day: "2-digit",
+    month: "2-digit",
+  })
+
   return (
-    <div
-      className={`py-3 ${estado.inscripcionAbierta ? "bg-green-50 border-green-200" : "bg-red-50 border-red-200"} border-b`}
-    >
+    <div className={`py-3 ${isOpen ? "bg-green-50 border-green-200" : "bg-red-50 border-red-200"} border-b`}>
       <div className="container px-4">
         <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-sm">
           <div className="flex items-center gap-2">
-            <span className={`text-lg ${estado.inscripcionAbierta ? "text-green-600" : "text-red-600"}`}>
-              {estado.inscripcionAbierta ? "🟢" : "🔒"}
+            <span className={`text-lg ${isOpen ? "text-green-600" : "text-red-600"}`}>{isOpen ? "🟢" : "🔒"}</span>
+            <span className={`font-medium ${isOpen ? "text-green-800" : "text-red-800"}`}>
+              {isOpen ? "Inscripción abierta" : "Inscripción cerrada"}
             </span>
-            <span className={`font-medium ${estado.inscripcionAbierta ? "text-green-800" : "text-red-800"}`}>
-              {estado.mensaje}
-            </span>
-            {estado.inscripcionAbierta && (
-              <span className={`${estado.inscripcionAbierta ? "text-green-700" : "text-red-700"}`}>
-                · Hasta {estado.fechaLimite}
-              </span>
-            )}
+            {isOpen && <span className="text-green-700">· Hasta {fechaFormateada}</span>}
           </div>
-          <Button asChild size="sm" variant={estado.inscripcionAbierta ? "default" : "secondary"}>
-            <Link href={estado.inscripcionAbierta ? "/postularme" : "/contacto"}>
-              {estado.inscripcionAbierta ? "Postularme" : "Recibir aviso"}
-            </Link>
+          <Button asChild size="sm" variant={isOpen ? "default" : "secondary"}>
+            <Link href={isOpen ? "/becas#pasos" : "/contacto"}>{isOpen ? "Postularme" : "Recibir aviso"}</Link>
           </Button>
         </div>
       </div>

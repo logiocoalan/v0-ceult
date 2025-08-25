@@ -1,0 +1,20 @@
+{
+  "inscripcion_oficial": "https://www.unlp.edu.ar/ingreso/",
+  "catalogo_carreras": "https://www.unlp.edu.ar/oferta-academica/",
+  "bienestar": "https://www.unlp.edu.ar/bienestar-universitario/",
+  "calendario": "https://www.unlp.edu.ar/calendario-academico/",
+  "facultades": [
+    { "nombre": "Arquitectura y Urbanismo", "url": "https://www.fau.unlp.edu.ar" },
+    { "nombre": "Ingeniería", "url": "https://www.ing.unlp.edu.ar" },
+    { "nombre": "Ciencias Exactas", "url": "https://exactas.unlp.edu.ar" },
+    { "nombre": "Ciencias Médicas", "url": "https://www.med.unlp.edu.ar" },
+    { "nombre": "Ciencias Naturales y Museo", "url": "https://www.fcnym.unlp.edu.ar" },
+    { "nombre": "Derecho", "url": "https://www.jursoc.unlp.edu.ar" },
+    { "nombre": "Humanidades y Ciencias de la Educación", "url": "https://www.fahce.unlp.edu.ar" },
+    { "nombre": "Informática", "url": "https://www.info.unlp.edu.ar" },
+    { "nombre": "Periodismo y Comunicación Social", "url": "https://perio.unlp.edu.ar" },
+    { "nombre": "Psicología", "url": "https://www.psico.unlp.edu.ar" },
+    { "nombre": "Trabajo Social", "url": "https://www.trabajosocial.unlp.edu.ar" },
+    { "nombre": "Ciencias Veterinarias", "url": "https://www.fcv.unlp.edu.ar" }
+  ]
+}
