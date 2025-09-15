@@ -8,12 +8,6 @@ import Link from "next/link"
 export default function HomePage() {
   const summaryBlocks = [
     {
-      title: "Elegibilidad",
-      description: "Conocé si cumplís con los requisitos para postularte a una beca de alojamiento.",
-      href: "/becas#eligibilidad",
-      buttonText: "Verificar requisitos",
-    },
-    {
       title: "Cómo postular",
       description: "Seguí los pasos necesarios para completar tu postulación de manera exitosa.",
       href: "/becas#pasos",
@@ -30,12 +24,6 @@ export default function HomePage() {
       description: "Descargá los formularios y conocé qué documentos necesitás presentar.",
       href: "/becas#documentacion",
       buttonText: "Ver documentos",
-    },
-    {
-      title: "Costos",
-      description: "Informate sobre los costos de la beca y las modalidades de pago disponibles.",
-      href: "/becas#costos",
-      buttonText: "Ver costos",
     },
     {
       title: "UNLP y Carreras",
