@@ -7,7 +7,7 @@ import "./globals.css"
 export const metadata: Metadata = {
   title: "CEULT - Becas de alojamiento para estudiar en La Plata",
   description:
-    "Centro de Estudiantes Universitarios de La Plata. Becas de alojamiento para estudiantes universitarios.",
+    "Centro de Estudiantes Universitarios de La Plata. Becas de alojamiento para estudiantes toldenses.",
   generator: "v0.app",
 }
 
