@@ -52,15 +52,14 @@ export default function HomePage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="py-12 md:py-20 bg-gradient-to-b from-muted/30 to-background">
+        <section className="py-12 md:py-20 bg-primary-foreground">
           <div className="container px-4">
             <div className="max-w-4xl mx-auto text-center space-y-6">
               <h1 className="text-3xl md:text-5xl font-bold text-foreground leading-tight">
-                Becas de alojamiento para estudiar en La Plata
+                Becas de alojamiento para toldenses en La Plata
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-                El CEULT ofrece becas de alojamiento para estudiantes universitarios que necesitan residencia durante
-                sus estudios en La Plata. Conocé cómo postularte y formar parte de nuestra comunidad estudiantil.
+                Dejar tu pueblo para estudiar es un gran paso, y el Centro de Estudiantes de Los Toldos (C.E.U.L.T.) está aquí para acompañarte en ese camino.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                 <Button asChild size="lg" className="text-base">
@@ -117,14 +116,14 @@ export default function HomePage() {
                     <div>
                       <h3 className="font-semibold text-foreground mb-2">Ambiente de estudio</h3>
                       <p className="text-muted-foreground">
-                        Espacios diseñados para el estudio y la concentración, con salas comunes y biblioteca.
+                        Espacios para el estudio y la concentración, con salas comunes y biblioteca.
                       </p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <h3 className="font-semibold text-foreground mb-2">Comunidad estudiantil</h3>
+                      <h3 className="font-semibold text-foreground mb-2">Comunidad</h3>
                       <p className="text-muted-foreground">
                         Convivencia con estudiantes de diferentes carreras y facultades de la UNLP.
                       </p>
@@ -169,8 +168,7 @@ export default function HomePage() {
             <div className="max-w-4xl mx-auto text-center space-y-6">
               <h2 className="text-2xl md:text-3xl font-bold text-foreground">¿Listo para postularte?</h2>
               <p className="text-lg text-muted-foreground">
-                No pierdas la oportunidad de formar parte de la comunidad estudiantil del CEULT. Las becas son limitadas
-                y se otorgan por orden de mérito.
+                No pierdas la oportunidad de formar parte de la comunidad estudiantil del CEULT. <br/>Las becas son limitadas.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                 <Button asChild size="lg">

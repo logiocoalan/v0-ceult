@@ -1,20 +1,21 @@
 {
-  "inscripcion_oficial": "https://www.unlp.edu.ar/ingreso/",
-  "catalogo_carreras": "https://www.unlp.edu.ar/oferta-academica/",
-  "bienestar": "https://www.unlp.edu.ar/bienestar-universitario/",
-  "calendario": "https://www.unlp.edu.ar/calendario-academico/",
   "facultades": [
-    { "nombre": "Arquitectura y Urbanismo", "url": "https://www.fau.unlp.edu.ar" },
-    { "nombre": "Ingeniería", "url": "https://www.ing.unlp.edu.ar" },
-    { "nombre": "Ciencias Exactas", "url": "https://exactas.unlp.edu.ar" },
-    { "nombre": "Ciencias Médicas", "url": "https://www.med.unlp.edu.ar" },
-    { "nombre": "Ciencias Naturales y Museo", "url": "https://www.fcnym.unlp.edu.ar" },
-    { "nombre": "Derecho", "url": "https://www.jursoc.unlp.edu.ar" },
-    { "nombre": "Humanidades y Ciencias de la Educación", "url": "https://www.fahce.unlp.edu.ar" },
-    { "nombre": "Informática", "url": "https://www.info.unlp.edu.ar" },
-    { "nombre": "Periodismo y Comunicación Social", "url": "https://perio.unlp.edu.ar" },
-    { "nombre": "Psicología", "url": "https://www.psico.unlp.edu.ar" },
-    { "nombre": "Trabajo Social", "url": "https://www.trabajosocial.unlp.edu.ar" },
-    { "nombre": "Ciencias Veterinarias", "url": "https://www.fcv.unlp.edu.ar" }
+    { "nombre": "Arquitectura y Urbanismo", "url": "https://www.fau.unlp.edu.ar/", "icon": "Building2" },
+    { "nombre": "Artes", "url": "https://www.fba.unlp.edu.ar/", "icon": "Palette" },
+    { "nombre": "Ciencias Agrarias y Forestales", "url": "https://www.agro.unlp.edu.ar/", "icon": "Leaf" },
+    { "nombre": "Ciencias Astronómicas y Geofísicas", "url": "https://www.fcaglp.unlp.edu.ar/", "icon": "Star" },
+    { "nombre": "Ciencias Económicas", "url": "https://www.econo.unlp.edu.ar/", "icon": "Wallet" },
+    { "nombre": "Ciencias Exactas", "url": "https://www.exactas.unlp.edu.ar/", "icon": "FlaskConical" },
+    { "nombre": "Ciencias Jurídicas y Sociales", "url": "https://www.jursoc.unlp.edu.ar/", "icon": "Scale" },
+    { "nombre": "Ciencias Médicas", "url": "https://www.med.unlp.edu.ar/", "icon": "Stethoscope" },
+    { "nombre": "Ciencias Naturales y Museo", "url": "https://www.fcnym.unlp.edu.ar/", "icon": "Feather" },
+    { "nombre": "Humanidades y Ciencias de la Educación", "url": "https://www.fahce.unlp.edu.ar/", "icon": "BookOpen" },
+    { "nombre": "Informática", "url": "https://www.info.unlp.edu.ar/", "icon": "Laptop" },
+    { "nombre": "Ingeniería", "url": "https://ing.unlp.edu.ar/", "icon": "Cog" },
+    { "nombre": "Odontología", "url": "https://www.folp.unlp.edu.ar/", "icon": "Tooth" },
+    { "nombre": "Periodismo y Comunicación Social", "url": "https://perio.unlp.edu.ar/", "icon": "Newspaper" },
+    { "nombre": "Psicología", "url": "https://www.psico.unlp.edu.ar/", "icon": "Brain" },
+    { "nombre": "Trabajo Social", "url": "https://www.trabajosocial.unlp.edu.ar/", "icon": "Users" },
+    { "nombre": "Ciencias Veterinarias", "url": "https://www.fcv.unlp.edu.ar/", "icon": "Dog" }
   ]
 }

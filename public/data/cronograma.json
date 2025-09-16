@@ -3,35 +3,35 @@
     {
       "id": 1,
       "titulo": "Apertura de inscripciones",
-      "fecha": "01/02/2024",
+      "fecha": "00/00/2025",
       "descripcion": "Inicio del período de postulaciones",
       "completado": true
     },
     {
       "id": 2,
       "titulo": "Cierre de inscripciones",
-      "fecha": "15/03/2024",
+      "fecha": "00/00/2025",
       "descripcion": "Fecha límite para presentar documentación",
       "completado": false
     },
     {
       "id": 3,
       "titulo": "Evaluación de postulaciones",
-      "fecha": "16/03/2024 - 30/03/2024",
+      "fecha": "00/00/2025 - 00/00/2025",
       "descripcion": "Período de revisión y evaluación",
       "completado": false
     },
     {
       "id": 4,
       "titulo": "Publicación de resultados",
-      "fecha": "05/04/2024",
+      "fecha": "00/00/2025",
       "descripcion": "Anuncio de becarios seleccionados",
       "completado": false
     },
     {
       "id": 5,
       "titulo": "Inicio del período de beca",
-      "fecha": "15/04/2024",
+      "fecha": "00/00/2025",
       "descripcion": "Comienzo del alojamiento",
       "completado": false
     }

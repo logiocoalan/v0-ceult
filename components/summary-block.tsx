@@ -18,7 +18,7 @@ export function SummaryBlock({ title, description, href, buttonText = "Ver más"
         <CardDescription>{description}</CardDescription>
       </CardHeader>
       <CardContent className="pt-0">
-        <Button asChild variant="ghost" className="p-0 h-auto font-normal text-primary hover:text-primary/80">
+        <Button asChild variant="ghost" className="p-0 h-auto font-normal text-primary hover:primary-foreground/80">
           <Link href={href} className="flex items-center gap-1">
             {buttonText}
             <ArrowRight className="h-4 w-4" />
