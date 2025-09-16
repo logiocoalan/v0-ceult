@@ -1,7 +1,7 @@
 [
-  { "id": "apertura", "titulo": "Apertura de inscripciones", "fecha": "2025-09-01" },
-  { "id": "cierre", "titulo": "Cierre de inscripciones", "fecha": "2025-10-15" },
-  { "id": "entrevistas", "titulo": "Entrevistas", "fecha": "2025-10-20" },
-  { "id": "resultados", "titulo": "Publicación de resultados", "fecha": "2025-10-30" },
-  { "id": "ingreso", "titulo": "Ingreso y entrega de llaves", "fecha": "2025-11-10" }
+  { "id": "apertura", "titulo": "Apertura de inscripciones", "fecha": "00/00/2025" },
+  { "id": "cierre", "titulo": "Cierre de inscripciones", "fecha": "00/00/2025" },
+  { "id": "entrevistas", "titulo": "Entrevistas", "fecha": "00/00/2025" },
+  { "id": "resultados", "titulo": "Publicación de resultados", "fecha": "00/00/2025" },
+  { "id": "ingreso", "titulo": "Ingreso y entrega de llaves", "fecha": "00/00/2025" }
 ]

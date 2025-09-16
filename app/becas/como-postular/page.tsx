@@ -9,7 +9,7 @@ import { CheckCircle, FileText, Upload, Send } from "lucide-react"
 const pasos = [
   {
     numero: 1,
-    titulo: "Verificá tu elegibilidad",
+    titulo: "Verificá los requisitos",
     descripcion: "Asegurate de cumplir con todos los requisitos obligatorios antes de comenzar tu postulación.",
     icon: CheckCircle,
     accion: "Verificar requisitos",

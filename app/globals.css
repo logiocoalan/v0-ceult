@@ -34,7 +34,7 @@
   --ring: #146cd2;
 
   /* Opcionales */
-  --muted: #f3f3f3;
+  --muted: #ffffff;
   --muted-foreground: #444444;
 
   /* Tipografía y layout */
@@ -102,7 +102,14 @@ h3 { font-size: clamp(1.25rem, 1.3rem + 0.35vw, 1.5rem); line-height: 1.25; }
 p, li { max-width: 72ch; }
 
 /* Layout */
-.container { max-width: 1200px; }
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;  /* opcional */
+  padding-right: 1rem; /* opcional */
+  width: 100%;
+  max-width: 1200px;   /* o lo que uses */
+}
 section { padding-block: clamp(2rem, 3vw, 3.5rem); }
 section > .container { gap: clamp(1.25rem, 2.5vw, 2rem); }
 

@@ -14,11 +14,6 @@ export function Footer() {
             <h4 className="text-sm font-semibold">Becas</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/becas/eligibilidad" className="text-muted-foreground hover:text-primary">
-                  Elegibilidad
-                </Link>
-              </li>
-              <li>
                 <Link href="/becas/como-postular" className="text-muted-foreground hover:text-primary">
                   Cómo postular
                 </Link>
@@ -50,11 +45,6 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/transparencia" className="text-muted-foreground hover:text-primary">
-                  Transparencia
-                </Link>
-              </li>
-              <li>
                 <Link href="/novedades" className="text-muted-foreground hover:text-primary">
                   Novedades
                 </Link>
@@ -77,7 +67,7 @@ export function Footer() {
         </div>
 
         <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p>&copy; 2024 CEULT. Todos los derechos reservados.</p>
+          <p>&copy; 2025 CEULT. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
