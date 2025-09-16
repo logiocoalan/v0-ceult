@@ -1,51 +1,49 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* Mantener el variant dark de Tailwind v4 */
+/* Mantener variant dark Tailwind v4 */
 @custom-variant dark (&:is(.dark *));
 
-/* === Variables CEULT (de Web-CEULT/css/style.css) === */
+/* === Paleta CEULT (base Web-CEULT) con look "duro" del sitio estático === */
 :root {
-  --background: #e5effb;
-  --foreground: #090c0f;
+  /* Colores base */
+  --background: #e5effb;      /* fondo celeste */
+  --foreground: #090c0f;      /* texto oscuro */
 
+  /* Superficies */
   --card: #ffffff;
   --card-foreground: #090c0f;
-
   --popover: #ffffff;
   --popover-foreground: #090c0f;
 
-  --primary: #146cd2;                 /* color-acento */
+  /* Accentos */
+  --primary: #146cd2;         /* azul institucional */
   --primary-foreground: #ffffff;
-
-  --secondary: #eaeaea;               /* color-secundario */
+  --secondary: #eaeaea;       /* gris claro */
   --secondary-foreground: #090c0f;
-
-  --muted: #f3f3f3;
-  --muted-foreground: #444444;
-
   --accent: #146cd2;
   --accent-foreground: #ffffff;
 
-  --destructive: #EB341F;             /* color-boton-hover */
+  /* Estados */
+  --destructive: #EB341F;     /* rojo */
   --destructive-foreground: #ffffff;
 
-  --border: #dfdfdf;                  /* color-borde */
+  /* Controles */
+  --border: #dfdfdf;
   --input: #dfdfdf;
   --ring: #146cd2;
 
-  /* Opcionales (charts, sidebar) si algunos componentes los usan */
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  /* Radii y densidad para look "duro" */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+
+  /* Container compacto */
+  --container-max: 1180px;
+  --section-tight: 2rem;
+  --section-regular: 2.5rem;
 }
 
-/* Modo oscuro: mantenemos contraste, pero respetamos acentos CEULT */
 .dark {
   --primary: #146cd2;
   --primary-foreground: #ffffff;
@@ -60,7 +58,7 @@
   --ring: #146cd2;
 }
 
-/* Mapear variables a tokens Tailwind v4 (@theme inline) */
+/* Mapear a tokens Tailwind v4 */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -72,8 +70,8 @@
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: #f3f3f3;
+  --color-muted-foreground: #444444;
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
@@ -83,7 +81,7 @@
   --color-ring: var(--ring);
 }
 
-/* Reset y base mínimos */
+/* ===== Reset mínimo y base ===== */
 *, *::before, *::after { box-sizing: border-box; }
 html, body { height: 100%; }
 body {
@@ -94,57 +92,94 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Tipografía por defecto */
-h1, h2, h3 { font-weight: 700; }
-h4, h5, h6 { font-weight: 600; }
+/* ===== Tipografía: look pesado y títulos en mayúsculas ===== */
+h1, h2, h3 {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+h4, h5, h6 { font-weight: 700; }
+strong, b { font-weight: 800; }
 
-/* Utilidades CEULT para alinear con Web-CEULT (opt-in) */
-:root { --container-max: 1200px; }
+/* ===== Densidad & contenedor compacto ===== */
 .ce-container {
   max-width: min(var(--container-max), 100% - 2rem);
   margin-inline: auto;
 }
-.section-tighter { padding-block: 2rem; }
-.section-regular { padding-block: 3rem; }
-.g-gap { gap: 1rem; }
+.section-tight   { padding-block: var(--section-tight); }
+.section-regular { padding-block: var(--section-regular); }
+.g-gap { gap: 0.875rem; } /* gap más compacto */
 
-/* Links: comportamiento Web-CEULT */
+/* ===== Links estilo Web-CEULT (negro + activo rojo) ===== */
 a {
   color: var(--foreground);
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 800;
 }
 a:hover { color: var(--destructive); }
 .nav a.active, .nav a[aria-current="page"] {
-  border-bottom: 2px solid var(--destructive);
+  border-bottom: 3px solid var(--destructive);
 }
 
-/* Botones */
-.btn-primary {
-  background: var(--primary);
-  color: var(--primary-foreground);
-  border: 1px solid var(--primary);
+/* ===== Botones negros y rectos ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 2.75rem;
+  padding: 0 1rem;
+  border-radius: var(--radius-sm);
+  font-weight: 800;
+  border: 1px solid transparent;
+  transition: background-color .15s ease, color .15s ease, border-color .15s ease;
 }
-.btn-primary:hover {
+
+.btn-black {
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
+}
+.btn-black:hover {
   background: var(--destructive);
   border-color: var(--destructive);
+  color: #ffffff;
 }
+
 .btn-outline {
   background: transparent;
   color: var(--foreground);
-  border: 1px solid var(--border);
+  border-color: var(--foreground);
 }
 .btn-outline:hover {
   color: var(--destructive);
   border-color: var(--destructive);
 }
 
-/* Tarjetas/Hero */
+/* ===== Tarjetas y superficies menos redondeadas ===== */
 .card-like {
   background: var(--card);
   color: var(--card-foreground);
   border: 1px solid var(--border);
-  border-radius: 0.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 1px 2px rgba(16,24,40,0.04);
 }
+
+/* ===== Imágenes: esquinas rectas por defecto ===== */
+img, video {
+  border-radius: var(--radius-sm);
+}
+
+/* ===== Helpers para hero ===== */
 .hero-soft { background: var(--background); }
 
+/* ===== Formularios (bordes oscuros) ===== */
+input, select, textarea {
+  border: 1px solid #111111;
+  border-radius: var(--radius-sm);
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--destructive);
+  box-shadow: 0 0 0 2px color-mix(in sRGB, var(--destructive) 25%, transparent);
+}
