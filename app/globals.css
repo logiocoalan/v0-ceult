@@ -4,10 +4,10 @@
 /* Mantener variant dark Tailwind v4 */
 @custom-variant dark (&:is(.dark *));
 
-/* === Paleta CEULT (sin agregar clases nuevas, solo variables) === */
+/* === Paleta CEULT + tokens globales === */
 :root {
   /* Colores base */
-  --background: #e5effb;      /* fondo celeste Web-CEULT */
+  --background: #e5effb;      /* fondo celeste institucional */
   --foreground: #090c0f;      /* texto oscuro */
 
   /* Superficies */
@@ -16,8 +16,8 @@
   --popover: #ffffff;
   --popover-foreground: #090c0f;
 
-  /* Acentos (azul institucional) */
-  --primary: #146cd2;
+  /* Acentos */
+  --primary: #146cd2;             /* azul institucional */
   --primary-foreground: #ffffff;
   --secondary: #eaeaea;
   --secondary-foreground: #090c0f;
@@ -33,28 +33,31 @@
   --input: #dfdfdf;
   --ring: #146cd2;
 
-  /* (Opcionales usados por algunos componentes; dejamos como estaban si no existen) */
+  /* Opcionales */
   --muted: #f3f3f3;
   --muted-foreground: #444444;
+
+  /* Tipografía y layout */
+  --font-size-base: 17px;
+  --leading: 1.7;
+  --radius-xl: 14px;
+
+  /* Sombras */
+  --shadow-soft: 0 6px 18px -8px color-mix(in sRGB, var(--foreground) 12%, transparent);
+  --shadow-card: 0 10px 30px -12px color-mix(in sRGB, var(--foreground) 14%, transparent);
 }
 
-/* Modo oscuro: conservamos contraste, pero respetamos acentos CEULT */
+/* Modo oscuro: mantenemos contraste y acentos */
 .dark {
   --primary: #146cd2;
   --primary-foreground: #ffffff;
-  --secondary: #eaeaea;
-  --secondary-foreground: #090c0f;
   --accent: #146cd2;
   --accent-foreground: #ffffff;
   --destructive: #EB341F;
   --destructive-foreground: #ffffff;
-  --border: #dfdfdf;
-  --input: #dfdfdf;
-  --ring: #146cd2;
 }
 
-/* Mapear variables a tokens Tailwind v4 (@theme inline).
-   No se agregan clases nuevas, solo se reasignan colores globales. */
+/* Mapear variables a tokens Tailwind v4 */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -77,50 +80,33 @@
   --color-ring: var(--ring);
 }
 
-/* Reset mínimo sin tocar estructura ni añadir utilidades */
+/* === Reset y base === */
 *, *::before, *::after { box-sizing: border-box; }
-html, body { height: 100%; }
+html, body { height: 100%; margin: 0; }
+html { font-size: var(--font-size-base); }
 body {
-  margin: 0;
   background: var(--background);
   color: var(--foreground);
+  line-height: var(--leading);
+  letter-spacing: 0.01em;
   font-feature-settings: "liga" 1, "calt" 1;
   text-rendering: optimizeLegibility;
 }
 
-/* Tipos: ajustes suaves (sin clases nuevas) */
+/* Tipografía */
 h1, h2, h3 { font-weight: 700; }
 h4, h5, h6 { font-weight: 600; }
-
-
-/* ====== Aesthetic refresh (minimal file changes) ======
-   Objetivo: minimalista, jerarquía clara, más aire y sobriedad
-   Alcance: solo ajustes globales sin tocar componentes
-======================================================== */
-
-/* 1) Tipografía y lectura */
-:root {
-  --font-size-base: 17px; /* mejora legibilidad */
-  --leading: 1.7;
-  --radius-xl: 14px; /* radios suaves coherentes */
-  --shadow-soft: 0 6px 18px -8px color-mix(in sRGB, var(--foreground) 12%, transparent);
-  --shadow-card: 0 10px 30px -12px color-mix(in sRGB, var(--foreground) 14%, transparent);
-}
-
-html { font-size: var(--font-size-base); }
-body { line-height: var(--leading); letter-spacing: 0.01em; }
-
 h1 { font-size: clamp(2rem, 2.2rem + 0.8vw, 2.75rem); line-height: 1.15; letter-spacing: -0.015em; }
 h2 { font-size: clamp(1.5rem, 1.6rem + 0.5vw, 2rem); line-height: 1.22; letter-spacing: -0.01em; }
 h3 { font-size: clamp(1.25rem, 1.3rem + 0.35vw, 1.5rem); line-height: 1.25; }
 p, li { max-width: 72ch; }
 
-/* 2) Estructura y aire */
+/* Layout */
 .container { max-width: 1200px; }
 section { padding-block: clamp(2rem, 3vw, 3.5rem); }
 section > .container { gap: clamp(1.25rem, 2.5vw, 2rem); }
 
-/* 3) Enlaces y foco: sobrios pero visibles */
+/* Links */
 a { text-underline-offset: 3px; text-decoration-thickness: .06em; }
 a:hover { text-decoration-color: color-mix(in sRGB, var(--primary) 70%, transparent); }
 :focus-visible {
@@ -129,7 +115,7 @@ a:hover { text-decoration-color: color-mix(in sRGB, var(--primary) 70%, transpar
   border-radius: 6px;
 }
 
-/* 4) Tarjetas y superficies */
+/* Cards */
 [data-slot="card"] {
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-soft);
@@ -137,26 +123,29 @@ a:hover { text-decoration-color: color-mix(in sRGB, var(--primary) 70%, transpar
 }
 [data-slot="card"]:hover { box-shadow: var(--shadow-card); }
 
-/* 5) Header y sticky CTA más pulidos sin tocar TSX */
+/* Header y CTA móvil */
 header { border-color: color-mix(in sRGB, var(--foreground) 10%, transparent); }
-.md\\:hidden.fixed.bottom-0 { box-shadow: 0 -6px 20px -14px color-mix(in sRGB, var(--foreground) 30%, transparent); }
+.md\:hidden.fixed.bottom-0 {
+  box-shadow: 0 -6px 20px -14px color-mix(in sRGB, var(--foreground) 30%, transparent);
+}
 
-/* 6) Botones: contraste y peso visual equilibrado */
+/* Botones */
 [data-slot="button"] {
   border-radius: 999px;
   font-weight: 600;
+  transition: all 0.2s ease-in-out;
 }
 [data-slot="button"][class*="outline"] {
   border-color: color-mix(in sRGB, var(--foreground) 20%, transparent);
 }
 
-/* 7) Imágenes: esquinas suaves por defecto sin afectar medios interactivos */
+/* Imágenes */
 img:not([class*="rounded"], [role="presentation"]) {
   border-radius: 12px;
   box-shadow: 0 10px 28px -16px color-mix(in sRGB, var(--foreground) 25%, transparent);
 }
 
-/* 8) Listas FAQ / contenido denso: respiración */
+/* FAQs y listas densas */
 details, .prose details {
   border: 1px solid color-mix(in sRGB, var(--foreground) 12%, transparent);
   border-radius: 12px;
@@ -165,10 +154,10 @@ details, .prose details {
 }
 details + details { margin-top: .75rem; }
 
-/* 9) Footer más claro */
+/* Footer */
 footer { border-top: 1px solid color-mix(in sRGB, var(--foreground) 10%, transparent); }
 
-/* 10) Modo oscuro: mantener sobriedad */
+/* Dark mode */
 @media (prefers-color-scheme: dark) {
   p, li { color: color-mix(in sRGB, var(--foreground) 90%, white 0%); }
   [data-slot="card"] { border-color: color-mix(in sRGB, var(--foreground) 25%, transparent); }
